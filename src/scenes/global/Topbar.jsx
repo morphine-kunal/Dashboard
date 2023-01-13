@@ -17,7 +17,6 @@ const Topbar = () => {
   return (
     <Box display={"flex"} justifyContent={"space-between"} p={2}>
       {/* search bar  */}
-
       <Box
         display={"flex"}
         backgroundColor={colors.primary[400]}
@@ -28,6 +27,7 @@ const Topbar = () => {
           <SearchIcon />
         </IconButton>
       </Box>
+       
       {/* icons  */}
       <Box display={"flex"}>
         <IconButton onClick={colorMode.toggleColorMode}>
