@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { tokens } from "../../theme";
 import HomeOutlined from "@mui/icons-material/HomeOutlined";
 import PeopleOutlined from "@mui/icons-material/PeopleOutlined";
-// import ContactsOutlined from "@mui/icons-material/ContactsOutlined";
+import ContactsOutlined from "@mui/icons-material/ContactsOutlined";
 import ReceiptOutlined from "@mui/icons-material/ReceiptOutlined";
 import PersonOutlined from "@mui/icons-material/PersonOutlined";
 import CalendarTodayOutlined from "@mui/icons-material/CalendarTodayOutlined";
@@ -155,6 +155,13 @@ const Sidebar = () => {
               title="Manage Team"
               to="/team"
               icon={<PeopleOutlined />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="Contacts Information"
+              to="/contacts"
+              icon={<ContactsOutlined />}
               selected={selected}
               setSelected={setSelected}
             />
