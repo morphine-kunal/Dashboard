@@ -17,22 +17,13 @@ import TimelineOutlined from "@mui/icons-material/TimelineOutlined";
 import MenuOutlined from "@mui/icons-material/MenuOutlined";
 import MapOutlined from "@mui/icons-material/MapOutlined";
 
-
-
-
-
-
-
-
-
-
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (
     <MenuItem
       active={selected === title}
-      style={{ colors: colors.grey[100] }}
+      style={{ color: colors.grey[100] }}
       onClick={() => setSelected(title)}
       icon={icon}
     >
@@ -48,11 +39,12 @@ const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selected, setSelected] = useState("Dashboard");
 
-  
-
   return (
     <Box
       sx={{
+        "& .pro-sidebar":{
+          height: '130% !important',
+        },
         "& .pro-sidebar-inner": {
           background: `${colors.primary[400]} !important`,
         },
@@ -70,20 +62,16 @@ const Sidebar = () => {
         },
       }}
     >
-      
       <ProSidebar collapsed={isCollapsed}>
-        
         <Menu iconShape="square">
-          
           {/* Logo and Menu icon  */}
           <MenuItem
             onClick={() => setIsCollapsed(!isCollapsed)}
             icon={isCollapsed ? <MenuOutlined /> : undefined}
             style={{
-              margin: "1px 0 20px 0",
+              margin: "10px 0 20px 0",
               color: colors.grey[100],
             }}
-            
           >
             {!isCollapsed && (
               <Box
@@ -132,7 +120,7 @@ const Sidebar = () => {
               </Box>
             </Box>
           )}
-          
+
           {/* MenuItems  */}
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
             <Item
@@ -146,7 +134,7 @@ const Sidebar = () => {
             <Typography
               variant="h6"
               color={colors.grey[300]}
-              sx={{ m: "1px 0 5px 20px" }}
+              sx={{ m: "15px 0 5px 20px" }}
             >
               Data
             </Typography>
@@ -175,7 +163,7 @@ const Sidebar = () => {
             <Typography
               variant="h6"
               color={colors.grey[300]}
-              sx={{ m: "1px 0 5px 20px" }}
+              sx={{ m: "15px 0 5px 20px" }}
             >
               Pages
             </Typography>
@@ -203,7 +191,7 @@ const Sidebar = () => {
             <Typography
               variant="h6"
               color={colors.grey[300]}
-              sx={{ m: "1px 0 5px 20px" }}
+              sx={{ m: "15px 0 5px 20px" }}
             >
               Charts
             </Typography>
