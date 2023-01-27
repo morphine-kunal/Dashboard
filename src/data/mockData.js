@@ -490,7 +490,7 @@ export const mockLineData = [
     color: tokens("dark").blueAccent[300],
     data: [
       {
-        x: "plane",
+        x: 'plane',
         y: 212,
       },
       {
