@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+
 import { mock } from "../data/water_qual_param_data_1000";
 
 export const DataModel = [

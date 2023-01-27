@@ -1,8 +1,8 @@
 import { useTheme } from "@mui/material";
 import { tokens } from "../theme";
 import { ResponsiveLine } from "@nivo/line";
-import { mockLineData as data } from "../data/mockData";
-import { mock } from "../data/water_qual_param_data_1000";
+// import { mockLineData as data } from "../data/mockData";
+// import { mock } from "../data/water_qual_param_data_1000";
 import { check, DataModel } from "../data/waterQualityDataModel";
 
 const LineChart = ({ isDashboard = false }) => {
