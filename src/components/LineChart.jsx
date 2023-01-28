@@ -1,35 +1,22 @@
 import { useTheme } from "@mui/material";
 import { tokens } from "../theme";
 import { ResponsiveLine } from "@nivo/line";
-// import { mockLineData as data } from "../data/mockData";
-// import { mock } from "../data/water_qual_param_data_1000";
-import { check, DataModel } from "../data/waterQualityDataModel";
+import { phDataModel } from "../data/waterQualityDataModel";
+import React from 'react';
+import { green } from "@mui/material/colors";
 
 const LineChart = ({ isDashboard = false }) => {
+
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  let dataModel = phDataModel();
+  console.log(dataModel);
 
-  check();
-  console.log(DataModel);
-  // console.log(mock.hits.hits[1]._source.timestamp);
-
-  // const liveData = [];
-  // const Data = () =>{
-  //   for(const key in mock.hits.hits){
-  //     liveData.push({
-  //       id:key,
-  //       timeStamp:mock.hits.hits[key]._source.timestamp,
-  //       pH: mock.hits.hits[key]._source.pH
-  //     }
-  //     )
-  //   };
-  // }
-  // Data();
+  
 
   return (
-    
       <ResponsiveLine
-        data={DataModel}
+        data={dataModel}
         theme={{
           axis: {
             domain: {
@@ -69,9 +56,9 @@ const LineChart = ({ isDashboard = false }) => {
           // Format must match how the date comes in :facepalm:
           // example "2020-02-20 17:17:51Z"
           format: "%Y-%m-%dT%H:%M:%SZ",
-          precision: "hour",
+          // precision: "minute",
         }}
-        xFormat="time:%d-%m-%Y"
+        xFormat="time:%H:%M"
         yScale={{
           type: "linear",
           min: "auto",
@@ -82,13 +69,19 @@ const LineChart = ({ isDashboard = false }) => {
         axisBottom={{
           format: "%H:%M",
           // tickValues: "every 2 days",
-          tickRotation: -90,
+          // tickRotation: -90,
           // legend: "time scale",
-          legendOffset: -12,
+          // legendOffset: -12,
         }}
         enableGridX={false}
         enableGridY={false}
-        colors={{ scheme: 'category10' }}
+        colors={green[400]}
+        pointSize={10}
+        pointColor={colors.primary[400]}
+        pointBorderWidth={2}
+        pointBorderColor={{ from: 'serieColor' }}
+        pointLabelYOffset={-12}
+        // pointBorderColor={{ from: 'serieColor' }}
         useMesh={true}
         legends={[
           {
@@ -117,7 +110,6 @@ const LineChart = ({ isDashboard = false }) => {
           },
         ]}
       />
-  
   );
 };
 export default LineChart;

@@ -210,7 +210,7 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
             <Item
-              title="Line Chart"
+              title="Water Quality Parameter"
               to="/line"
               icon={<TimelineOutlined />}
               selected={selected}
