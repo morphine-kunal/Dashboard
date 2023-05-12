@@ -15,6 +15,7 @@ const ProgressCircle = ({ progress = "0.75", size = "40" }) => {
         borderRadius: "50%",
         width: `${size}px`,
         height: `${size}px`,
+        
       }}
     />
   );

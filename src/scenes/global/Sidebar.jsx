@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
+import { ProSidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import "react-pro-sidebar/dist/css/styles.css";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
@@ -13,6 +13,7 @@ import CalendarTodayOutlined from "@mui/icons-material/CalendarTodayOutlined";
 import HelpOutlined from "@mui/icons-material/HelpOutlined";
 import BarChartOutlined from "@mui/icons-material/BarChartOutlined";
 import PieChartOutlinedOutlined from "@mui/icons-material/PieChartOutlineOutlined";
+import InvertColorsRoundedIcon from '@mui/icons-material/InvertColorsRounded';
 import TimelineOutlined from "@mui/icons-material/TimelineOutlined";
 import MenuOutlined from "@mui/icons-material/MenuOutlined";
 import MapOutlined from "@mui/icons-material/MapOutlined";
@@ -209,13 +210,35 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            <Item
+            <SubMenu
               title="Water Quality Parameter"
-              to="/line"
-              icon={<TimelineOutlined />}
+              // to="/line"
+              icon={<InvertColorsRoundedIcon />}
+              // selected={selected}
+              // setSelected={setSelected}
+            >
+              <Item
+              title='pH'
+              to='/line'
+              icon={<TimelineOutlined/>}
               selected={selected}
               setSelected={setSelected}
-            />
+              />
+              <Item
+              title='Tds'
+              to='/geography'
+              icon={<TimelineOutlined/>}
+              selected={selected}
+              setSelected={setSelected}
+              />
+              <Item
+              title='Depth'
+              to='/pie'
+              icon={<TimelineOutlined/>}
+              selected={selected}
+              setSelected={setSelected}
+              />
+            </SubMenu>
             <Item
               title="Geography Chart"
               to="/geography"

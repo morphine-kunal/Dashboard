@@ -3,7 +3,7 @@ import { tokens } from "../theme";
 import { ResponsiveLine } from "@nivo/line";
 import { phDataModel } from "../data/waterQualityDataModel";
 import React from 'react';
-import { green } from "@mui/material/colors";
+
 
 const LineChart = ({ isDashboard = false }) => {
 
@@ -75,7 +75,7 @@ const LineChart = ({ isDashboard = false }) => {
         }}
         enableGridX={false}
         enableGridY={false}
-        colors={green[400]}
+        colors={colors.greenAccent[400]}
         pointSize={10}
         pointColor={colors.primary[400]}
         pointBorderWidth={2}

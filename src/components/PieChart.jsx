@@ -43,6 +43,7 @@ const PieChart = () => {
       padAngle={0.7}
       cornerRadius={3}
       activeOuterRadiusOffset={8}
+      role={180}
       borderWidth={1}
       borderColor={{
         from: "color",
