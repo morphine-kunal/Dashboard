@@ -2,11 +2,11 @@
 # Final Project
 
 <div style="display: flex; flex-wrap: wrap;">
-<img src='/dashboardImg/img1.png' alt='img1' width='500' hiwght='500'/>
-<img src='/dashboardImg/img2.png' alt='img1' width='500' hiwght='500'/>
-<img src='/dashboardImg/img3.png' alt='img1' width='500' hiwght='500'/>
-<img src='/dashboardImg/img4.png' alt='img1' width='500' hiwght='500'/>
-<img src='/dashboardImg/img5.png' alt='img1' width='500' hiwght='500'/>
+<img src='/dashboardImg/img1.png' alt='img1' />
+<img src='/dashboardImg/img2.png' alt='img1' />
+<img src='/dashboardImg/img3.png' alt='img1' />
+<img src='/dashboardImg/img4.png' alt='img1' />
+<img src='/dashboardImg/img5.png' alt='img1' />
 </div>
 
 
