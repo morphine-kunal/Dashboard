@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ProSidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
+import { ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
 import "react-pro-sidebar/dist/css/styles.css";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
@@ -13,8 +13,8 @@ import CalendarTodayOutlined from "@mui/icons-material/CalendarTodayOutlined";
 import HelpOutlined from "@mui/icons-material/HelpOutlined";
 import BarChartOutlined from "@mui/icons-material/BarChartOutlined";
 import PieChartOutlinedOutlined from "@mui/icons-material/PieChartOutlineOutlined";
-import InvertColorsRoundedIcon from '@mui/icons-material/InvertColorsRounded';
-import TimelineOutlined from "@mui/icons-material/TimelineOutlined";
+// import InvertColorsRoundedIcon from '@mui/icons-material/InvertColorsRounded';
+// import TimelineOutlined from "@mui/icons-material/TimelineOutlined";
 import MenuOutlined from "@mui/icons-material/MenuOutlined";
 import MapOutlined from "@mui/icons-material/MapOutlined";
 
@@ -37,7 +37,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
 const Sidebar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
   const [selected, setSelected] = useState("Dashboard");
 
   return (
@@ -81,8 +81,8 @@ const Sidebar = () => {
                 alignItems={"center"}
                 ml="15px"
               >
-                <Typography variant="h3" color={colors.grey[100]}>
-                  MORPHINE
+                <Typography variant="h4" color={colors.grey[100]}>
+                  React Dashboard
                 </Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlined />
@@ -210,7 +210,7 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            <SubMenu
+            {/* <SubMenu
               title="Water Quality Parameter"
               // to="/line"
               icon={<InvertColorsRoundedIcon />}
@@ -238,7 +238,7 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
               />
-            </SubMenu>
+            </SubMenu> */}
             <Item
               title="Geography Chart"
               to="/geography"
